@@ -1,6 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import style from './styles/UserForm.module.scss';
+
+
+const mapDispatchToProps = (dispatch) => ({
+    updateForm: (form) => {
+        dispatch({ type: "UPDATE_USER_DETAILS_FORM", payload: form })
+    }
+})
 
 const UserDetailsForm = () => {
     return (
@@ -22,4 +30,4 @@ const UserDetailsForm = () => {
     )
 }
 
-export default UserDetailsForm;
+export default connect(mapDispatchToProps)(UserDetailsForm);
