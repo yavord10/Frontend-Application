@@ -67,8 +67,7 @@ const SettingsForm = ({ settingsForm, updateFormInStore }) => {
             setSubmitMessage('Form was successfuly submitted');
         }
     }
-    
-    console.log(errors);
+
     useEffect(() => {
         updateForm(settingsForm)
     }, [settingsForm])

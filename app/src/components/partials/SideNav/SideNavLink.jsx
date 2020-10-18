@@ -12,7 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
 const SideNavLink = ({ name, switchShownTab }) => {
     const switchTab = () => {
         const tabName = name.toLowerCase().split(' ').join('');
-        console.log(tabName);
         switchShownTab(tabName);
     }
 
