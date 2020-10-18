@@ -6,7 +6,7 @@ import style from './styles/Header.module.scss';
 const Header = () => {
     return (
         <div className={style.headerContainer}>
-            <img src={logo} />
+            <img src={logo} alt="logo" />
         </div>
     )
 }

@@ -3,10 +3,9 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 60px 20px 0;
     background-color: whitesmoke;
     height: 100%;
-    margin-top: 50px;
+    width: 100%;
 }
 
 .innerUserContainer {
@@ -29,4 +28,27 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.tabContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    min-height: 600px;
+}
+
+@media (max-width: 1500px) {
+    .innerUserContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .innerUserContainer {
+        flex-direction: column;
+    }
 }

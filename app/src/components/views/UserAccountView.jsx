@@ -1,11 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import SettingsForm from '../partials/Forms/SettingsForm';
 import SideNav from '../partials/SideNav/SideNav';
-import UserDetailsForm from '../partials/UserForm/UserDetailsForm';
+import UserDetailsForm from '../partials/Forms/UserDetailsForm';
 
 import style from './styles/UserAccountView.module.scss';
 
 
-const UserAccountView = () => {
+const mapStateToProps = (state) => ({
+    shownTab: state.shownTab
+})
+
+const UserAccountView = ({ shownTab }) => {
     return (
         <div className={style.userAccountContainer}>
             <div className={style.innerUserContainer}>
@@ -13,11 +19,19 @@ const UserAccountView = () => {
                     <SideNav />
                 </div>
                 <div className={style.rightSide}>
-                    <UserDetailsForm />
+                    <div className={style.tabContainer}>
+                        {shownTab === 'myaccount' &&
+                            <UserDetailsForm />
+                        }
+
+                        {shownTab === 'mysettings' &&
+                            <SettingsForm />
+                        }
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default UserAccountView;
+export default connect(mapStateToProps)(UserAccountView);

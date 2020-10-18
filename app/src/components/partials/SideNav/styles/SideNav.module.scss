@@ -20,3 +20,14 @@
 .sideNavLink:hover {
     color: $primary-color
 }
+
+@media (max-width: 1000px) {
+    .sideNav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sideNavLink {
+        margin: 0 5px;
+    }
+}
